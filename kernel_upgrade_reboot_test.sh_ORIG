@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+CURRENT_KERNEL=`/usr/bin/uname -r`
+
+/usr/bin/test -d "/lib/modules/${CURRENT_KERNEL}" && exit 0 || /usr/local/bin/sit 1000 /usr/share/icons/hicolor/24x24/status/pamac-tray-update.png "Kernel Upgrade - Reboot Required" "leftclick" "rightclick" 2>/dev/null | \
+while read LINE; do
+
+case "$LINE" in
+  "leftclick") /usr/bin/xfce4-session-logout ;;
+  "rightclick") /usr/bin/xfce4-session-logout ;;
+  *) echo "Case Error"
+esac
+done
