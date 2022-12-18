@@ -11,7 +11,7 @@ readonly SENSORS="`/usr/bin/sensors | grep -v -e 'temp[2-8]'`"
 
 # Panel
   INFO="<img>${TEMP_ICON}</img>"
-  INFO+="<txt> ${TEMP}</txt>"
+  INFO+="<txt><span foreground='#FFFFFF'> ${TEMP}</span></txt>"
   MORE_INFO="<tool>"
   MORE_INFO+="${SENSORS}"
   MORE_INFO+="</tool>"
