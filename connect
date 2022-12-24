@@ -79,10 +79,10 @@ sub write_hosts {
 sub print_hosts {
 	my ($host, $num);
 	$num++;
-	printf("Num  Hostname        Username     IP Address      Protocol Port\n");
-	printf("---- --------------- ------------ --------------- -------- ----\n");
+	printf("Num  Hostname              Username              IP Address            Protocol Port\n");
+	printf("---- --------------------- --------------------- --------------------- -------- ----\n");
 	foreach $host (sort(keys(%hosts))) {
-		printf("%3i. %-15s %-12s %-15s %-8s %s\n",$num,$host,$hosts{$host}->{username},$hosts{$host}->{ip},$hosts{$host}->{protocol},$hosts{$host}->{port});
+		printf("%3i. %-21s %-21s %-21s %-8s %s\n",$num,$host,$hosts{$host}->{username},$hosts{$host}->{ip},$hosts{$host}->{protocol},$hosts{$host}->{port});
 		$num++;
 	}
 	print "\n";
